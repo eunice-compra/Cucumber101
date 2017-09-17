@@ -34,16 +34,16 @@ public class LoginStep extends PageBase implements En {
             assertTrue(verifyLoginPage());
         });
         And("^I enter the username as \"([^\"]*)\"$", (String username) -> {
-            sendKeysToElement(txtUserName,10,username);
+            sendKeysToElement(txtUserName,15,username);
         });
         And("^I click the user Next button$", () -> {
-            clickButton(btnUserNext,10);
+            clickButton(btnUserNext,300);
         });
         And("^I enter the password as \"([^\"]*)\"$", (String password) -> {
-            sendKeysToElement(txtPassword,10,password);
+            sendKeysToElement(txtPassword,15,password);
         });
         And("^I click the password Next button$", () -> {
-            clickButton(btnPwdNext,15);
+            clickButton(btnPwdNext,300);
         });
         Then("^I should see my mailbox$", () -> {
             assertTrue(verifyMailboxPage());
@@ -51,10 +51,10 @@ public class LoginStep extends PageBase implements En {
     }
 
     private boolean verifyLoginPage() {
-        return findElement(lblSignIn,10);
+        return findElement(lblSignIn,20);
     }
 
     private boolean verifyMailboxPage() {
-        return findElement(lnkInbox,10);
+        return findElement(lnkInbox,20);
     }
 }
